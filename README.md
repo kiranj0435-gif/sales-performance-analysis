@@ -93,3 +93,13 @@ CALCULATE(
 )
 
 
+## 📊 Dashboard Preview
+
+### Overview Dashboard
+![Overview](screenshots/overview_dashboard.png)
+
+### Product Performance
+![Product](screenshots/product_analysis.png)
+
+### Regional Analysis
+![Region](screenshots/regional_analysis.png)
