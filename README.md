@@ -65,3 +65,31 @@ The goal of this project is to analyze sales data to identify:
 - Found regions with declining profit margins  
 - Observed seasonal sales trends  
 - Recommended focus areas for revenue growth  
+
+## 📐 DAX Measures Used
+
+### Total Sales
+Total Sales = SUM(sales_dataset[Sales])
+
+### Total Profit
+Total Profit = SUM(sales_dataset[Profit])
+
+### Profit Margin %
+Profit Margin % = 
+DIVIDE([Total Profit], [Total Sales]) * 100
+
+### Year-over-Year Growth
+YoY Growth % =
+DIVIDE(
+    [Total Sales] - CALCULATE([Total Sales], SAMEPERIODLASTYEAR(Date[Date])),
+    CALCULATE([Total Sales], SAMEPERIODLASTYEAR(Date[Date]))
+) * 100
+
+### Top N Products
+Top 5 Sales =
+CALCULATE(
+    [Total Sales],
+    TOPN(5, ALL(sales_dataset[Product_Name]), [Total Sales], DESC)
+)
+
+
